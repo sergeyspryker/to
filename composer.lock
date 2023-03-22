@@ -1,0 +1,62 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "9f048373c16f89512a7a55db21d37b2b",
+    "packages": [
+        {
+            "name": "pavelmaksimov25/randomizer",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pavelmaksimov25/randomizer.git",
+                "reference": "50c0f59b08483b5a7ff74fc8a22f619d002915ae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pavelmaksimov25/randomizer/zipball/50c0f59b08483b5a7ff74fc8a22f619d002915ae",
+                "reference": "50c0f59b08483b5a7ff74fc8a22f619d002915ae",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Randomizer\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pavlo Maksymov",
+                    "email": "pavlo.maksymov@spryker.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/pavelmaksimov25/randomizer/tree/main",
+                "issues": "https://github.com/pavelmaksimov25/randomizer/issues"
+            },
+            "time": "2023-03-22T21:39:01+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "pavelmaksimov25/randomizer": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^8.1"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

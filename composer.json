@@ -9,7 +9,14 @@
         }
     ],
     "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:pavelmaksimov25/randomizer.git"
+        }
+    ],
     "require": {
-        "php": "^8.1"
+        "php": "^8.1",
+        "pavelmaksimov25/randomizer": "dev-main"
     }
 }
