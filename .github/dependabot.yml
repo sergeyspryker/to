@@ -15,5 +15,5 @@ updates:
     labels:
       - "composer dependencies"
 
-    versioning-strategy: lockfile-only
+    versioning-strategy: increase
 
