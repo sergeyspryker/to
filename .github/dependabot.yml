@@ -15,3 +15,5 @@ updates:
     labels:
       - "composer dependencies"
 
+    versioning-strategy: widen
+
