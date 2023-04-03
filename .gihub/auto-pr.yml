@@ -14,15 +14,6 @@ jobs:
       - id: commit
         uses: pr-mpt/actions-commit-hash@v2
 
-      - name: Checkout randomizer repository
-        uses: actions/checkout@v2
-        with:
-          repository: pavelmaksimov25/randomizer
-          ref: main
-
-      - name: Install dependencies
-        run: composer install --no-scripts --no-progress
-
       - name: Checkout project
         uses: actions/checkout@v2
         with:
@@ -31,11 +22,11 @@ jobs:
       - name: Create branch
         run: git checkout -b update-dependencies-${{ steps.commit.outputs.short }}
 
+      - name: Install dependencies
+        run: composer install --no-scripts --no-progress
+
       - name: Update dependencies
         run: composer require pavelmaksimov25/randomizer --no-dev --with-dependencies --no-scripts --no-progress
-
-      - name: Replace composer.lock file
-        run: mv ../repository-a/composer.lock .
 
       - name: Commit changes
         run: |
