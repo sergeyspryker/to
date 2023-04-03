@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pavelmaksimov25/randomizer.git",
-                "reference": "50c0f59b08483b5a7ff74fc8a22f619d002915ae"
+                "reference": "b352ef1084c3acea96b8096ce4d6b8248ef9a951"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pavelmaksimov25/randomizer/zipball/50c0f59b08483b5a7ff74fc8a22f619d002915ae",
-                "reference": "50c0f59b08483b5a7ff74fc8a22f619d002915ae",
+                "url": "https://api.github.com/repos/pavelmaksimov25/randomizer/zipball/b352ef1084c3acea96b8096ce4d6b8248ef9a951",
+                "reference": "b352ef1084c3acea96b8096ce4d6b8248ef9a951",
                 "shasum": ""
             },
             "require": {
@@ -43,15 +43,13 @@
                 "source": "https://github.com/pavelmaksimov25/randomizer/tree/main",
                 "issues": "https://github.com/pavelmaksimov25/randomizer/issues"
             },
-            "time": "2023-03-22T21:39:01+00:00"
+            "time": "2023-04-03T16:02:58+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "pavelmaksimov25/randomizer": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
