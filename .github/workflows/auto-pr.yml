@@ -39,8 +39,7 @@ jobs:
           branch: update-dependencies
           branch-suffix: short-commit-hash
           token: ${{ secrets.PAT }}
-          labels: |
-            - composer dependencies
+          labels: composer dependencies
           delete-branch: true
           assignees: pavelmaksimov25
           reviewers: pavelmaksimov25
