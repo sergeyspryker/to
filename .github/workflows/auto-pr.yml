@@ -26,19 +26,13 @@ jobs:
       - name: Update dependencies
         run: composer require pavelmaksimov25/randomizer --no-scripts --no-progress
 
-      - name: Commit changes
+      - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Updated randomizer
           commit_options: '--no-verify --signoff'
           branch: update-dependencies-${{ steps.commit.outputs.short }}
           create_branch: true
-
-      - name: Push changes
-        uses: ad-m/github-push-action@v0.5.0
-        with:
-          branch: update-dependencies-${{ steps.commit.outputs.short }}
-          force: true
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3
