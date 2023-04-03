@@ -2,7 +2,7 @@ name: Update dependencies
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '0 0 * * *'
   repository_dispatch:
     types: [update-dependencies]
 
@@ -19,9 +19,6 @@ jobs:
         with:
           ref: main
 
-      - name: Create branch
-        run: git checkout -b update-dependencies-${{ steps.commit.outputs.short }}
-
       - name: Install dependencies
         run: composer install --no-scripts --no-progress
 
@@ -33,6 +30,8 @@ jobs:
         with:
           commit_message: Updated randomizer
           commit_options: '--no-verify --signoff'
+          branch: update-dependencies-${{ steps.commit.outputs.short }}
+          create_branch: true
 
       - name: Push changes
         uses: ad-m/github-push-action@v0.5.0
