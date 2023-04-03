@@ -48,3 +48,4 @@ jobs:
             This pull request updates the dependencies of repository B based on the latest version of repository A.
           commit-message: Updated randomizer dependency
           branch: update-dependencies-${{ steps.commit.outputs.short }}
+          token: ${{ secrets.PAT }}
