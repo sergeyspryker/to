@@ -29,9 +29,10 @@ jobs:
         run: composer require pavelmaksimov25/randomizer --no-scripts --no-progress
 
       - name: Commit changes
-        run: |
-          git add composer.lock
-          git commit -m "Updated randomizer"
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Updated randomizer
+          commit_options: '--no-verify --signoff'
 
       - name: Push changes
         uses: ad-m/github-push-action@v0.5.0
