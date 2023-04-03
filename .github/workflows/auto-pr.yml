@@ -17,7 +17,7 @@ jobs:
       - name: Checkout project
         uses: actions/checkout@v2
         with:
-          ref: main
+          ref: rc
           token: ${{ secrets.PAT }}
 
       - name: Install dependencies
@@ -26,20 +26,21 @@ jobs:
       - name: Update dependencies
         run: composer require pavelmaksimov25/randomizer --no-scripts --no-progress
 
-      - name: Commit and push changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Updated randomizer
-          commit_options: '--no-verify --signoff'
-          branch: update-dependencies-${{ steps.commit.outputs.short }}
-          create_branch: true
-
-      - name: Create pull request
+      - name: Commit, push and create pull request
         uses: peter-evans/create-pull-request@v3
         with:
           title: Updated Randomizer
           body: |
-            This pull request updates the dependencies of repository B based on the latest version of repository A.
+            This pull request updates pavelmaksimov25/randomizer dependency to the latest version.
           commit-message: Updated randomizer dependency
-          branch: update-dependencies-${{ steps.commit.outputs.short }}
+          committer: GitHub <depbot@example.test>
+          author: ${{ github.actor }} <${{ github.actor }}@example.test>
+          base: rc
+          branch: update-dependencies
+          branch-suffix: short-commit-hash
           token: ${{ secrets.PAT }}
+          labels: |
+            - composer dependencies
+          delete-branch: true
+          assignees: pavelmaksimov25
+          reviewers: pavelmaksimov25
