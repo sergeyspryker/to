@@ -1,0 +1,24 @@
+name: Sync
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync-branches:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout project
+      uses: actions/checkout@v2
+      with:
+        ref: main
+        token: ${{ secrets.PAT }}
+
+    - name: Opening pull request
+      id: pull
+      uses: tretuna/sync-branches@1.4.0
+      with:
+        GITHUB_TOKEN: ${{secrets.PAT}}
+        FROM_BRANCH: "main"
+        TO_BRANCH: "rc"
