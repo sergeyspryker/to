@@ -32,6 +32,7 @@ jobs:
           commit_options: '--no-verify --signoff'
           branch: update-dependencies-${{ steps.commit.outputs.short }}
           create_branch: true
+          token: ${{ secrets.PAT }}
 
       - name: Push changes
         uses: ad-m/github-push-action@v0.5.0
