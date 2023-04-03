@@ -22,4 +22,3 @@ jobs:
         GITHUB_TOKEN: ${{secrets.PAT}}
         FROM_BRANCH: "main"
         TO_BRANCH: "rc"
-        REVIEWERS: pavelmaksimov25
