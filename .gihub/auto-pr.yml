@@ -1,0 +1,58 @@
+name: Update dependencies
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # run daily at midnight
+  repository_dispatch:
+    types: [update-dependencies]
+
+jobs:
+  update-dependencies:
+    runs-on: ubuntu-latest
+
+    steps:
+      - id: commit
+        uses: pr-mpt/actions-commit-hash@v2
+
+      - name: Checkout randomizer repository
+        uses: actions/checkout@v2
+        with:
+          repository: pavelmaksimov25/randomizer
+          ref: main
+
+      - name: Install dependencies
+        run: composer install --no-scripts --no-progress
+
+      - name: Update dependencies
+        run: composer update --no-scripts --no-progress
+
+      - name: Checkout randomizer repository
+        uses: actions/checkout@v2
+        with:
+          ref: main
+
+      - name: Create branch
+        run: git checkout -b update-dependencies-${{ steps.commit.outputs.short }}
+
+      - name: Replace composer.lock file
+        run: mv ../repository-a/composer.lock .
+
+      - name: Commit changes
+        run: |
+          git add composer.lock
+          git commit -m "Updated randomizer"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.5.0
+        with:
+          branch: update-dependencies-${{ steps.commit.outputs.short }}
+          force: true
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          title: Update Randomizer
+          body: |
+            This pull request updates the dependencies of repository B based on the latest version of repository A.
+          commit-message: Updated randomizer dependency
+          branch: update-dependencies-${{ steps.commit.outputs.short }}
