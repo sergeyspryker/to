@@ -23,7 +23,7 @@ jobs:
         run: composer require sergeyspryker/from --no-scripts --no-progress
 
       - name: Commit, push and create pull request
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v4
         with:
           title: Updated Randomizer
           body: |
