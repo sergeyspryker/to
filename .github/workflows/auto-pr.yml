@@ -1,11 +1,12 @@
 name: Update dependencies
 
-on: [repository_dispatch]
+on:
+  repository_dispatch:
+    types: [ EXTERNAL_TRIGGER_EVENT ]
 
 jobs:
   update-dependencies:
     runs-on: ubuntu-latest
-    if: github.event.action == "EXTERNAL_TRIGGER_EVENT"
     steps:
       - id: commit
         uses: pr-mpt/actions-commit-hash@v2
