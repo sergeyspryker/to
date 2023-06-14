@@ -2,7 +2,7 @@ name: Update dependencies
 
 on:
   repository_dispatch:
-    types: [ EXTERNAL_TRIGGER_EVENT ]
+    types: [ DEPENDENCY_UPDATED_EVENT ]
 
 jobs:
   update-dependencies:
