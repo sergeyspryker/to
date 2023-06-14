@@ -2,7 +2,7 @@ name: Update dependencies
 
 on:
   repository_dispatch:
-    types: [ DEPENDENCY_UPDATED_EVENT ]
+    types: [ dependency_updated ]
 
 jobs:
   update-dependencies:
