@@ -24,14 +24,14 @@ jobs:
         run: composer install --no-scripts --no-progress
 
       - name: Update dependencies
-        run: composer require pavelmaksimov25/randomizer --no-scripts --no-progress
+        run: composer require sergeyspryker/randomizer --no-scripts --no-progress
 
       - name: Commit, push and create pull request
         uses: peter-evans/create-pull-request@v3
         with:
           title: Updated Randomizer
           body: |
-            This pull request updates pavelmaksimov25/randomizer dependency to the latest version.
+            This pull request updates sergeyspryker/randomizer dependency to the latest version.
           commit-message: Updated randomizer dependency
           committer: GitHub <depbot@example.test>
           author: ${{ github.actor }} <${{ github.actor }}@example.test>
@@ -41,5 +41,5 @@ jobs:
           token: ${{ secrets.PAT }}
           labels: composer dependencies
           delete-branch: true
-          assignees: pavelmaksimov25
-          reviewers: pavelmaksimov25
+          assignees: sergeyspryker
+          reviewers: sergeyspryker

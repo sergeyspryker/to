@@ -1,5 +1,5 @@
 {
-    "name": "pavelmaksimov25/cheerup",
+    "name": "sergeyspryker/cheerup",
     "description": "Test project",
     "type": "project",
     "license": "MIT",
@@ -13,11 +13,11 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@github.com:pavelmaksimov25/randomizer.git"
+            "url": "git@github.com:sergeyspryker/randomizer.git"
         }
     ],
     "require": {
-        "php": "^8.1",
-        "pavelmaksimov25/randomizer": "dev-main"
+        "php": "^8.0",
+        "sergeyspryker/randomizer": "dev-main"
     }
 }
