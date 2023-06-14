@@ -2,7 +2,7 @@ name: Update dependencies
 
 on:
   schedule:
-    - cron: '* * * * *'
+    - cron: '0 0 * * *'
   repository_dispatch:
     types: [update-dependencies]
 
@@ -24,14 +24,14 @@ jobs:
         run: composer install --no-scripts --no-progress
 
       - name: Update dependencies
-        run: composer require sergeyspryker/randomizer --no-scripts --no-progress
+        run: composer require sergeyspryker/from --no-scripts --no-progress
 
       - name: Commit, push and create pull request
         uses: peter-evans/create-pull-request@v3
         with:
           title: Updated Randomizer
           body: |
-            This pull request updates sergeyspryker/randomizer dependency to the latest version.
+            This pull request updates sergeyspryker/from dependency to the latest version.
           commit-message: Updated randomizer dependency
           committer: GitHub <depbot@example.test>
           author: ${{ github.actor }} <${{ github.actor }}@example.test>
