@@ -12,10 +12,9 @@ jobs:
         uses: pr-mpt/actions-commit-hash@v2
 
       - name: Checkout project
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: main
-          token: ${{ secrets.PAT }}
 
       - name: Install dependencies
         run: composer install --no-scripts --no-progress
@@ -24,10 +23,9 @@ jobs:
         run: composer require sergeyspryker/from --no-scripts --no-progress
 
       - name: Commit, push and create pull request
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v5
         with:
           title: Updated Randomizer
-          token: ${{ secrets.PAT }}
           body: |
             This pull request updates sergeyspryker/from dependency to the latest version.
           commit-message: Updated randomizer dependency
