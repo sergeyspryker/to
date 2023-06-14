@@ -1,15 +1,11 @@
 name: Update dependencies
 
-on:
-  schedule:
-    - cron: '0 0 * * *'
-  repository_dispatch:
-    types: [update-dependencies]
+on: [repository_dispatch]
 
 jobs:
   update-dependencies:
     runs-on: ubuntu-latest
-
+    if: github.event.action == "EXTERNAL_TRIGGER_EVENT"
     steps:
       - id: commit
         uses: pr-mpt/actions-commit-hash@v2
@@ -17,8 +13,7 @@ jobs:
       - name: Checkout project
         uses: actions/checkout@v2
         with:
-          ref: rc
-          token: ${{ secrets.PAT }}
+          ref: main
 
       - name: Install dependencies
         run: composer install --no-scripts --no-progress
@@ -35,10 +30,9 @@ jobs:
           commit-message: Updated randomizer dependency
           committer: GitHub <depbot@example.test>
           author: ${{ github.actor }} <${{ github.actor }}@example.test>
-          base: rc
+          base: main
           branch: update-dependencies
           branch-suffix: short-commit-hash
-          token: ${{ secrets.PAT }}
           labels: composer dependencies
           delete-branch: true
           assignees: sergeyspryker
