@@ -11,7 +11,7 @@ env:
 
 on:
   repository_dispatch:
-    types: [ dependency_updated ]
+    types: [ ${{ env.EVENT }} ]
 
 jobs:
   update-dependencies:
