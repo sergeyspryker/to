@@ -1,17 +1,19 @@
 name: Update dependencies
 
+env:
+  TARGET_BRANCH: main
+  EVENT: from_dependency_updated
+  DEPENDENCY: sergeyspryker/from
+  PR_ASSIGNEES: sergeyspryker
+  PR_REVIEWERS: sergeyspryker
+
 on:
   repository_dispatch:
-    types: [ dependency_updated ]
+    types: [ ${{ env.EVENT }} ]
 
 jobs:
   update-dependencies:
     runs-on: ubuntu-latest
-    env:
-      TARGET_BRANCH: main
-      DEPENDENCY: sergeyspryker/from
-      PR_ASSIGNEES: sergeyspryker
-      PR_REVIEWERS: sergeyspryker
     steps:
       - id: commit
         uses: pr-mpt/actions-commit-hash@v2
