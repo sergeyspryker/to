@@ -33,5 +33,5 @@ jobs:
           branch-suffix: short-commit-hash
           labels: composer dependencies
           delete-branch: true
-          assignees: pavelmaksimov25, DmytroKlymanSpryker
-          reviewers: pavelmaksimov25, DmytroKlymanSpryker
+          assignees: sergeyspryker
+          reviewers: sergeyspryker
