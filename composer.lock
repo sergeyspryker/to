@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sergeyspryker/from.git",
-                "reference": "ef12d9eaed9b4caa167bf0af486f7fbfaf82ba3d"
+                "reference": "4e6bb7edb842c72f1718490562d5b1d6d9a20b3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sergeyspryker/from/zipball/ef12d9eaed9b4caa167bf0af486f7fbfaf82ba3d",
-                "reference": "ef12d9eaed9b4caa167bf0af486f7fbfaf82ba3d",
+                "url": "https://api.github.com/repos/sergeyspryker/from/zipball/4e6bb7edb842c72f1718490562d5b1d6d9a20b3f",
+                "reference": "4e6bb7edb842c72f1718490562d5b1d6d9a20b3f",
                 "shasum": ""
             },
             "require": {
@@ -43,15 +43,13 @@
                 "source": "https://github.com/sergeyspryker/from/tree/main",
                 "issues": "https://github.com/sergeyspryker/from/issues"
             },
-            "time": "2023-06-14T10:08:22+00:00"
+            "time": "2023-06-15T09:16:11+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "sergeyspryker/from": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
