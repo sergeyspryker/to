@@ -2,7 +2,7 @@ name: Update dependencies
 
 env:
   TARGET_BRANCH: main
-  EVENT: from_dependency_updated
+  EVENT: dependency_updated
   DEPENDENCY: sergeyspryker/from
   PR_BRANCH: update-dependencies
   PR_LABELS: composer dependencies
