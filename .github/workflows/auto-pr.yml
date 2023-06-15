@@ -2,7 +2,6 @@ name: Update dependencies
 
 env:
   TARGET_BRANCH: main
-  EVENT: dependency_updated
   DEPENDENCY: sergeyspryker/from
   PR_BRANCH: update-dependencies
   PR_LABELS: composer dependencies
@@ -11,7 +10,7 @@ env:
 
 on:
   repository_dispatch:
-    types: [ ${{ env.EVENT }} ]
+    types: [ dependency_updated ]
 
 jobs:
   update-dependencies:
