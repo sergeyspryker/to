@@ -16,11 +16,8 @@ jobs:
         with:
           ref: main
 
-      - name: Install dependencies
-        run: composer install --no-scripts --no-progress
-
       - name: Update dependencies
-        run: composer require sergeyspryker/from --no-scripts --no-progress
+        run: composer require sergeyspryker/from --no-scripts --no-progress --no-install
 
       - name: Commit, push and create pull request
         uses: peter-evans/create-pull-request@v5
@@ -28,13 +25,13 @@ jobs:
           title: Updated Randomizer
           body: |
             This pull request updates sergeyspryker/from dependency to the latest version.
-          commit-message: Updated randomizer dependency
-          committer: GitHub <depbot@example.test>
+          commit-message: Updated dependencies
+          committer: SprykerReleaseBot <spryker-release-bot@spryker.com>
           author: ${{ github.actor }} <${{ github.actor }}@example.test>
           base: main
           branch: update-dependencies
           branch-suffix: short-commit-hash
           labels: composer dependencies
           delete-branch: true
-          assignees: sergeyspryker
-          reviewers: sergeyspryker
+          assignees: pavelmaksimov25, DmytroKlymanSpryker
+          reviewers: pavelmaksimov25, DmytroKlymanSpryker
