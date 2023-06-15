@@ -14,4 +14,4 @@ $phrase = $randomizer->randomString(...$phrases);
 
 echo $phrase . PHP_EOL;
 
-///1111333333цццц
+///1
