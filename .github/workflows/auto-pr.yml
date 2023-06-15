@@ -30,7 +30,7 @@ jobs:
           author: ${{ github.actor }} <${{ github.actor }}@example.test>
           base: main
           branch: update-dependencies
-          branch-suffix: short-commit-hash
+          branch-suffix: timestamp
           labels: composer dependencies
           delete-branch: true
           assignees: sergeyspryker
