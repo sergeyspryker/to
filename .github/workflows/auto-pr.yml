@@ -4,6 +4,8 @@ env:
   TARGET_BRANCH: main
   EVENT: from_dependency_updated
   DEPENDENCY: sergeyspryker/from
+  PR_BRANCH: update-dependencies
+  PR_LABELS: composer dependencies
   PR_ASSIGNEES: sergeyspryker
   PR_REVIEWERS: sergeyspryker
 
@@ -36,9 +38,9 @@ jobs:
           committer: SprykerReleaseBot <spryker-release-bot@spryker.com>
           author: ${{ github.actor }} <${{ github.actor }}@example.test>
           base: ${{ env.TARGET_BRANCH }}
-          branch: update-dependencies
+          branch: ${{ env.PR_BRANCH }}
           branch-suffix: timestamp
-          labels: composer dependencies
+          labels: ${{ env.PR_LABELS }}
           delete-branch: true
           assignees: ${{ env.PR_ASSIGNEES }}
           reviewers: ${{ env.PR_REVIEWERS }}
